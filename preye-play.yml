@@ -1,0 +1,28 @@
+- name: update g1 servers
+  hosts: n1 n2
+  become: yes
+  tasks:
+   - name: create /opt/devops directory
+     file:
+       path: /home/fedora/opt/devops
+       state: directory
+
+   - name: create info.txt with content on all servers
+     copy:
+       dest: /home/fedora/opt/devops/info.txt
+       content: "hello from ansible"
+
+- name: update g2 servers
+  hosts: n3 n4
+  become: yes
+  tasks:
+   - name: create /opt/devops directory
+     file:
+       path: /home/ec2-user/opt/devops
+       state: directory
+
+   - name: create info.txt with content on all servers
+     copy:
+       dest: /home/ec2-user/opt/devops/info.txt
+       content: "hello from ansible"
+...
