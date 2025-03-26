@@ -1,0 +1,43 @@
+---
+- name: update n1 servers
+  hosts: n1
+  
+  tasks:
+   - name: create /opt/devops directory
+     file:
+       path: /home/fedora/opt/devops/new_dir
+       state: directory
+
+   - name: create /opt/devops directory
+     file:
+       path: /home/fedora/opt/devops/new_dir_1
+       state: directory     
+
+- name: update n2 servers
+  hosts: n2
+
+  tasks:
+   - name: create directory
+     file:
+       path: /home/fedora/new_dir
+       state: directory
+
+   - name: create /opt/devops directory
+     file:
+       path: /home/fedoranew_dir_1
+       state: directory
+
+- name: update g2 servers
+  hosts: n3 n4
+
+  tasks:
+   - name: create directory
+     file:
+       path: /home/ec2-user/new_dir
+       state: directory
+
+   - name: create directory
+     file:
+       path: /home/ec2-user/new_dir_1
+       state: directory
+...

@@ -1,3 +1,4 @@
+---
 - name: update g1 servers
   hosts: n1 n2
   become: yes
