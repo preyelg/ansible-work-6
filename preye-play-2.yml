@@ -24,7 +24,7 @@
 
    - name: create /opt/devops directory
      file:
-       path: /home/fedoranew_dir_1
+       path: /home/fedora/new_dir_1
        state: directory
 
 - name: update g2 servers
