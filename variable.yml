@@ -3,7 +3,7 @@
   hosts: g3
   become: yes
   vars:
-  myusername: Preye
+    myusername: Preye
 
   tasks:
    - name: updating page
