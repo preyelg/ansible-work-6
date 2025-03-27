@@ -1,9 +1,9 @@
 <html>
     <body>
         <center>
-            <h1>Operating System : </h1>
+            <h1>Operating System : {{ ansible_distribution }} </h1>
             <br>
-            <h2>Hostname : </h2>
+            <h2>Hostname : {{ ansible_os_family }} </h2>
         </center>
     </body>
 </html>
