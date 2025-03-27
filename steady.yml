@@ -1,0 +1,10 @@
+---
+- name: fixed page
+  hosts: g3
+  become: yes
+  tasks:
+   - name: updating page
+     template:
+       src: steady.j2
+       dest: /var/www/html/steady.html
+...
