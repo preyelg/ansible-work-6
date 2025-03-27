@@ -1,0 +1,10 @@
+---
+- name: fixed page
+  hosts: g3
+  become: yes
+  tasks:
+   - name: updating page
+     copy:
+       src: unchanged.html
+       dest: /var/www/html/fixed.html
+...
