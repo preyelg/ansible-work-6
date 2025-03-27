@@ -1,0 +1,13 @@
+---
+- name: variable testing
+  hosts: g3
+  become: yes
+  vars:
+  myusername: Preye
+
+  tasks:
+   - name: updating page
+     template:
+       src: steady.j2
+       dest: /var/www/html/steady.html
+...
