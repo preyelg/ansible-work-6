@@ -21,6 +21,50 @@
        enabled: yes 
      when: ansible_distribution == "Amazon"
 
+- name: install HTTP server
+  hosts: n7
+  become: yes
+  tasks:
+   - name: install HTTPD
+     apt:
+       name: httpd
+       state: present
+     when: ansible_distribution == "Debian"
+
+   - name: start Httpd
+     service:
+       name: httpd 
+       state: started
+     when: ansible_distribution == "Debian"
+
+   - name: Enable Httpd
+     service:
+       name: httpd 
+       enabled: yes 
+     when: ansible_distribution == "Debian"
+
+- name: install HTTP server
+  hosts: n1 
+  become: yes
+  tasks:
+   - name: install HTTPD
+     yum:
+       name: httpd
+       state: present
+     when: ansible_distribution == "CentOS"
+
+   - name: start Httpd
+     service:
+       name: httpd 
+       state: started
+     when: ansible_distribution == "Centos"
+
+   - name: Enable Httpd
+     service:
+       name: httpd 
+       enabled: yes 
+     when: ansible_distribution == "CentOS"
+
    - name: install Apache2
      apt:
        name: apache2
