@@ -1,12 +1,11 @@
 ---
-- hosts: all
-
-- name: updating page
-  copy:
+ - name: updating page
+   copy:
      src: unchanged.html
      dest: /var/www/html/fixed.html
 
-- name: updating page
-  template:
+ - name: updating page
+   template:
     src: steady.j2
     dest: /var/www/html/steady.html
+...    
